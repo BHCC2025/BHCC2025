@@ -20,9 +20,27 @@ smoke test.
 
 You don't need to download anything else: each recipe includes the setup kit.
 
-**Before you start:** DGX OS 7 with its current updates on every Spark. For two Sparks, one QSFP cable between them;
-for three, three cables, each Spark to both others. No IP addresses to configure, and no Hugging Face login for the
-recipes below.
+**Before you start:** DGX OS 7 with its current updates on every Spark, and no Hugging Face login needed for the
+recipes below. For more than one Spark, connect the cables first (see below). No IP addresses to configure:
+`./setup.sh` finds which port goes where and assigns them.
+
+### Cabling
+
+Each DGX Spark has two high-speed QSFP network ports. No switch is needed: the Sparks are cabled to each other
+directly with 200GbE QSFP cables.
+
+**Two Sparks, for TP2:** one cable, from either port on one Spark to either port on the other.
+
+**Three Sparks, for TP3 (triangle):** three cables, so that each Spark's two ports go to its two different neighbours:
+
+| Cable | From | To |
+|---|---|---|
+| 1 | Spark A, port 1 | Spark B, port 1 |
+| 2 | Spark B, port 2 | Spark C, port 1 |
+| 3 | Spark C, port 2 | Spark A, port 2 |
+
+Any other arrangement works too, as long as no Spark has both cables going to the same neighbour; `./setup.sh`
+detects the layout and tells you if it is wrong. Run `./setup.sh` on Spark A, which becomes the head node.
 
 ## Recipes
 
