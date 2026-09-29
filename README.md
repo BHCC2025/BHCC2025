@@ -1,7 +1,8 @@
-# DGX Spark recipes
+# BHCC2025 · NVIDIA DGX Spark LLM Setup — Start Here
 
-Tested setups for running open models on NVIDIA DGX Sparks: one box, two joined by a QSFP cable, or three in a
-triangle. Every speed below was measured on our own Sparks with the recipe's own benchmark, and every setup passed its
+Run open LLMs such as Qwen and Gemma locally on 1, 2 or 3 NVIDIA DGX Sparks (GB10) with vLLM: tested recipes, one
+setup script, and multi-Spark tensor parallelism over direct QSFP cables (one box, two joined by a cable, or three in
+a triangle). Every speed below was measured on our own Sparks with the recipe's own benchmark, and every setup passed its
 smoke test.
 
 ## Start here
