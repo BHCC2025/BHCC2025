@@ -2,8 +2,10 @@
 
 Run open LLMs such as Qwen and Gemma locally on 1, 2 or 3 NVIDIA DGX Sparks (GB10) with vLLM: tested recipes, one
 setup script, and multi-Spark tensor parallelism over direct QSFP cables (one box, two joined by a cable, or three in
-a triangle). Every speed below was measured on our own Sparks with the recipe's own benchmark, and every setup passed its
-smoke test.
+a triangle).
+
+Every speed below was measured on our own Sparks with the recipe's own benchmark, and every setup passed its smoke
+test.
 
 ## Start here
 
